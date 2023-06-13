@@ -178,3 +178,7 @@ selected_variables = {
     'Q197': 'government_right_monitor_all_emails_and_internet_information',
     'Q198': 'government_right_collect_information_about_residents'
 }
+
+inverted_variables = [
+    'importance_of_god'
+]
