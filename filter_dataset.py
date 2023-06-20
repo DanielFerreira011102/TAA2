@@ -17,9 +17,10 @@ data['country'] = data['country'].map(country_codes)
 
 # Invert column values, so we keep the same pattern
 if INVERT:
-    for variable in inverted_variables:
-        data[variable] = data[variable].max() + data[variable].min() - data[variable]
+    for variable, min_, max_ in inverted_variables:
+        positive_values = data[variable] > 0
+        data.loc[positive_values, variable] = max_ + min_ - data.loc[positive_values, variable]
 
 # Write the new CSV file
-new_file_name = 'WVS_Cross-National_Wave_7_csv_v5_0_social_religious_ethical_not_inverted.csv'
+new_file_name = 'WVS_Cross-National_Wave_7_csv_v5_0_social_religious_ethical.csv'
 data.to_csv(new_file_name, index=False)
