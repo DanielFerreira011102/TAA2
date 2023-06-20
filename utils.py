@@ -180,5 +180,5 @@ selected_variables = {
 }
 
 inverted_variables = [
-    'importance_of_god'
+    ['importance_of_god', 1, 10]
 ]
